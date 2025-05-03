@@ -54,7 +54,7 @@ body {
 .lightmode {
     background-image: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
     color: var(--neutral-dark1);
-    .logo__container {
+    .header__container {
         background-color: var(--neutral-light4);
     }
     .theme-switch {
@@ -89,46 +89,6 @@ body {
       }
 }
 
-/* .dark-mode {
-    background-image: var(--dark-gradient);
-    color: var(--neutral-light4);
-    .logo__container {
-        background-color: var(--neutral-dark2);
-    }
-    .theme-switch {
-        background-color: var(--neutral-dark3);
-    }
-    .button {
-        background-color: var(--neutral-dark3);
-        color: var(--neutral-light4);
-        border: 0.09375rem solid var(--neutral-dark4);
-    }
-    .card {
-        background-color: var(--neutral-dark3);
-        border: 0.09375rem solid var(--neutral-dark4);
-    }
-    .card__text {
-        color: var(--neutral-light1);
-    }
-    .card__remove-btn button {
-        background-color: var(--neutral-dark3);
-        color: var(--neutral-light4);
-        border: 0.09375rem solid var(--neutral-dark4);
-    }
-    .slider {
-        background-color: var(--neutral-dark4);
-    }
-    input:checked + .slider {
-        background-color: var(--red-one);
-      }
-      
-      input:focus + .slider {
-        box-shadow: 0 0 1px var(--red-one);
-      }
-} */
-
-
-
 
 /* || CLASS STYLES || */
 .container {
@@ -139,7 +99,7 @@ body {
 }
 
 /* Div One */
-.logo__container {
+.header__container {
     background-color: var(--neutral-dark2);
     display: flex;
     justify-content: space-between;
