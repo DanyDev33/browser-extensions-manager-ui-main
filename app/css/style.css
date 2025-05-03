@@ -49,26 +49,86 @@ body {
     color: var(--neutral-light4);
 }
 
-.darkmode {
+
+/* || THEME CLASSES */
+.lightmode {
     background-image: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
-    color: var(--neutral-dark3);
+    color: var(--neutral-dark1);
     .logo__container {
         background-color: var(--neutral-light4);
     }
-    .logo {
+    .theme-switch {
         background-color: var(--neutral-light3);
     }
     .button {
         background-color: var(--neutral-light4);
-        color: var(--neutral-dark3);
+        color: var(--neutral-dark1);
+        border: 0.09375rem solid var(--neutral-light2);
     }
     .card {
         background-color: var(--neutral-light4);
+        border: 0.09375rem solid var(--neutral-light2);
     }
     .card__text {
-        color: var(--neutral-dark2);
+        color: var(--neutral-dark4);
     }
+    .card__remove-btn button {
+        background-color: var(--neutral-light4);
+        color: var(--neutral-dark1);
+        border: 0.09375rem solid var(--neutral-light2);
+    }
+    .slider {
+        background-color: var(--neutral-light1);
+    }
+    input:checked + .slider {
+        background-color: var(--red-three);
+      }
+      
+      input:focus + .slider {
+        box-shadow: 0 0 1px var(--red-three);
+      }
 }
+
+/* .dark-mode {
+    background-image: var(--dark-gradient);
+    color: var(--neutral-light4);
+    .logo__container {
+        background-color: var(--neutral-dark2);
+    }
+    .theme-switch {
+        background-color: var(--neutral-dark3);
+    }
+    .button {
+        background-color: var(--neutral-dark3);
+        color: var(--neutral-light4);
+        border: 0.09375rem solid var(--neutral-dark4);
+    }
+    .card {
+        background-color: var(--neutral-dark3);
+        border: 0.09375rem solid var(--neutral-dark4);
+    }
+    .card__text {
+        color: var(--neutral-light1);
+    }
+    .card__remove-btn button {
+        background-color: var(--neutral-dark3);
+        color: var(--neutral-light4);
+        border: 0.09375rem solid var(--neutral-dark4);
+    }
+    .slider {
+        background-color: var(--neutral-dark4);
+    }
+    input:checked + .slider {
+        background-color: var(--red-one);
+      }
+      
+      input:focus + .slider {
+        box-shadow: 0 0 1px var(--red-one);
+      }
+} */
+
+
+
 
 /* || CLASS STYLES || */
 .container {
@@ -86,10 +146,22 @@ body {
     align-items: center;
 }
 
-.logo {
+.theme-switch {
     background-color: var(--neutral-dark3);
     padding: 0.625rem;
     border-radius: 0.625rem;
+}
+
+#theme-switch img:last-child {
+    display: none;
+}
+
+.lightmode #theme-switch img:first-child {
+    display: none;
+}
+
+.lightmode #theme-switch img:last-child {
+    display: block;
 }
 
 /* Div Two */
@@ -118,9 +190,6 @@ body {
     /* margin-right: 4px; */
 }
 
-.button:active {
-    background-color: var(--red-two);
-}
 
 /* Section One */
 .cards {
@@ -147,8 +216,9 @@ body {
 }
 
 .card__title {
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 700;
+    margin-bottom: 8px;
 }
 
 .card__text {
@@ -168,7 +238,7 @@ body {
     background-color: var(--neutral-dark3);
     color: var(--neutral-light4);
     font-family: var(--font-family);
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
     padding: 8px 16px;
     border-radius: 20px;

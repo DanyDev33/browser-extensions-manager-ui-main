@@ -1,28 +1,24 @@
-const themeImg = document.getElementById("theme")
+/* || THEME TOGGLE */
+let lightmode = localStorage.getItem("lightmode")
+const themeSwitch = document.getElementById("theme-switch")
 
-
-
-
-
-
-
-themeImg.addEventListener('click', () => {
-    if (themeImg.src.includes("icon-sun.svg")) {
-        themeImg.src = "assets/images/icon-moon.svg"
-        img.alt = "dark-mode"
-        changeTheme()
-    } else { 
-        themeImg.src = "assets/images/icon-sun.svg"
-        img.alt = "light-mode"
-    }
-
-})
-
-const changeTheme = () => {
-    document.body.classList.toggle('darkmode')
-
+const enableLightMode = () => {
+    document.body.classList.add('lightmode')
+    localStorage.setItem('lightmode', 'active')
 }
 
+const disableLightMode = () => {
+    document.body.classList.remove('lightmode')
+    localStorage.setItem('lightmode', null)
+}
+
+if(lightmode === "active") enableLightMode()
+
+themeSwitch.addEventListener('click', () => {
+    // !== - Means "Does Not Equal", ? - Means "Then", : - Means "Else"
+    lightmode = localStorage.getItem('lightmode')
+    lightmode !== "active" ? enableLightMode() : disableLightMode()
+})
 
 
 
