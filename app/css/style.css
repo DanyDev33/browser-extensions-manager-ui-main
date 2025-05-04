@@ -54,39 +54,63 @@ body {
 .lightmode {
     background-image: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
     color: var(--neutral-dark1);
+
     .header__container {
         background-color: var(--neutral-light4);
     }
+
     .theme-switch {
         background-color: var(--neutral-light3);
     }
-    .button {
+
+    .theme-switch:hover {
+        background-color: var(--neutral-light1);
+    }
+
+    .extensions__button {
         background-color: var(--neutral-light4);
         color: var(--neutral-dark1);
         border: 0.09375rem solid var(--neutral-light2);
     }
+
+    .extensions__button:hover {
+        background-color: var(--neutral-light4);
+        border: 0.09375rem solid var(--neutral-light2);
+        opacity: 60%;
+    }
+
     .card {
         background-color: var(--neutral-light4);
         border: 0.09375rem solid var(--neutral-light2);
     }
+
     .card__text {
         color: var(--neutral-dark4);
     }
+
     .card__remove-btn button {
         background-color: var(--neutral-light4);
         color: var(--neutral-dark1);
         border: 0.09375rem solid var(--neutral-light2);
     }
+
+    .card__remove-btn button:hover {
+        background-color: var(--red-three);
+        border: 0.09375rem solid var(--red-three);
+        color: var(--neutral-light4);
+    }
+
     .slider {
         background-color: var(--neutral-light1);
     }
-    input:checked + .slider {
+
+    input:checked+.slider {
         background-color: var(--red-three);
-      }
-      
-      input:focus + .slider {
+    }
+
+    input:focus+.slider {
         box-shadow: 0 0 1px var(--red-three);
-      }
+    }
 }
 
 
@@ -110,6 +134,12 @@ body {
     background-color: var(--neutral-dark3);
     padding: 0.625rem;
     border-radius: 0.625rem;
+    transition: 0.4s ease;
+}
+
+.theme-switch:hover {
+    background-color: var(--neutral-dark4);
+    transition: 0.4s ease;
 }
 
 #theme-switch img:last-child {
@@ -139,7 +169,7 @@ body {
     font-weight: 700;
 }
 
-.button {
+.extensions__button {
     background-color: var(--neutral-dark3);
     border: 0.09375rem solid var(--neutral-dark4);
     color: var(--neutral-light4);
@@ -147,7 +177,20 @@ body {
     font-family: var(--font-family);
     font-size: 0.875rem;
     border-radius: 1.25rem;
+    transition: 0.4s ease;
     /* margin-right: 4px; */
+}
+
+.selected {
+    background-color: var(--red-one);
+    border: 0.09375rem solid var(--red-one);
+    color: var(--neutral-dark1);
+}
+
+.extensions__button:hover {
+    background-color: var(--neutral-dark4);
+    border: 0.09375rem solid var(--neutral-dark4);
+    transition: 0.4s ease;
 }
 
 
@@ -163,8 +206,8 @@ body {
     display: grid;
     grid-template-columns: 0.5fr 3.5fr 2fr;
     grid-template-rows: 50% 1fr 1fr;
-    background-color: var(--neutral-dark3);
-    border: 0.09375rem solid var(--neutral-dark4);
+    background-color: var(--neutral-dark2);
+    border: 0.09375rem solid var(--neutral-dark3);
     border-radius: 10px;
     font-family: var(--font-family);
     padding: 10px;
@@ -195,7 +238,7 @@ body {
 }
 
 .card__remove-btn button {
-    background-color: var(--neutral-dark3);
+    background-color: var(--neutral-dark2);
     color: var(--neutral-light4);
     font-family: var(--font-family);
     font-size: 13px;
@@ -203,6 +246,15 @@ body {
     padding: 8px 16px;
     border-radius: 20px;
     border: 0.09375rem solid var(--neutral-dark4);
+    transition: 0.3s ease;
+}
+
+.card__remove-btn button:hover {
+    background-color: var(--red-two);
+    border: 0.09375rem solid var(--red-two);
+    color: var(--neutral-dark1);
+    transition: 0.3s ease;
+
 }
 
 .card__toggle {
@@ -255,19 +307,21 @@ body {
 .switch {
     position: relative;
     display: inline-block;
-    width: 40px; /* 🔥 (was 30px) */
-    height: 22px; /* 🔥 (was 17px) */
-  }
-  
-  /* Hide default HTML checkbox */
-  .switch input {
+    width: 40px;
+    /* 🔥 (was 30px) */
+    height: 22px;
+    /* 🔥 (was 17px) */
+}
+
+/* Hide default HTML checkbox */
+.switch input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
-  
-  /* The slider */
-  .slider {
+}
+
+/* The slider */
+.slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -277,41 +331,48 @@ body {
     background-color: var(--neutral-dark4);
     -webkit-transition: .4s;
     transition: .4s;
-  }
-  
-  .slider:before {
+}
+
+.slider:before {
     position: absolute;
     content: "";
-    height: 18px; /* 🔥 (was 13px) */
-    width: 18px; /* 🔥 (was 13px) */
+    height: 18px;
+    /* 🔥 (was 13px) */
+    width: 18px;
+    /* 🔥 (was 13px) */
     left: 2px;
     bottom: 2px;
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
-  }
-  
-  input:checked + .slider {
+}
+
+input:checked+.slider {
     background-color: var(--red-one);
-  }
-  
-  input:focus + .slider {
+}
+
+input:checked+.slider:hover {
+    background-color: var(--red-two);
+}
+
+
+input:focus+.slider {
     box-shadow: 0 0 1px var(--red-one);
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(18px); /* 🔥 (was 13px) */
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(18px);
+    /* 🔥 (was 13px) */
     -ms-transform: translateX(18px);
     transform: translateX(18px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 22px; /* 🔥 (was 17px) */
-  }
-  
-  .slider.round:before {
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 22px;
+    /* 🔥 (was 17px) */
+}
+
+.slider.round:before {
     border-radius: 50%;
-  }
-  
-  
+}
