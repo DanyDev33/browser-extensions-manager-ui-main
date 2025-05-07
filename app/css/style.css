@@ -73,10 +73,23 @@ body {
         border: 0.09375rem solid var(--neutral-light2);
     }
 
+    .selected {
+        background-color: var(--red-three);
+        border: 0.09375rem solid var(--red-three);
+        color: var(--neutral-light4);
+    }
+
     .extensions__button:hover {
         background-color: var(--neutral-light4);
         border: 0.09375rem solid var(--neutral-light2);
         opacity: 60%;
+    }
+
+    .selected:hover {
+        background-color: var(--red-two);
+        border: 0.09375rem solid var(--red-two);
+        color: var(--neutral-light4);
+        opacity: 100%;
     }
 
     .card {
@@ -191,6 +204,12 @@ body {
     background-color: var(--neutral-dark4);
     border: 0.09375rem solid var(--neutral-dark4);
     transition: 0.4s ease;
+}
+
+.selected:hover {
+    background-color: var(--red-two);
+    border: 0.09375rem solid var(--red-two);
+    color: var(--neutral-dark1);
 }
 
 

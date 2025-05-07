@@ -26,35 +26,27 @@ themeSwitch.addEventListener('click', () => {
 
 /* || SELECTED BUTTONS */
 allBtn.addEventListener('click', () => {
-    if (activeBtn.className !== 'selected') {
-        allBtn.classList.remove('selected')
-        activeBtn.className.add('selected')
-    } else if (activeBtn.className || inactiveBtn.className === 'selected') {
-        activeBtn.classList.remove('selected')
-        inactiveBtn.classList.remove('selected')
-        allBtn.className.add('selected')
+    if (allBtn.className !== 'selected') {
+        activeBtn.classList.remove('selected') || inactiveBtn.classList.remove('selected')
+        allBtn.classList.add('selected')
     }
 })
 
 activeBtn.addEventListener('click', () => {
     if (activeBtn.className !== 'selected') {
-        allBtn.className.remove('selected')
-    } else if (activeBtn.className || inactiveBtn.className === 'selected') {
-        allBtn.classList.remove('selected')
-        inactiveBtn.classList.remove('selected')
-        activeBtn.className.add('selected')
+        allBtn.classList.remove('selected') || inactiveBtn.classList.remove('selected')
+        activeBtn.classList.add('selected')
     }
 })
 
 inactiveBtn.addEventListener('click', () => {
     if (inactiveBtn.className !== 'selected') {
-        inactiveBtn.className.remove('selected')
-    } else if (activeBtn.className || inactiveBtn.className === 'selected') {
-        activeBtn.classList.remove('selected')
-        allBtn.classList.remove('selected')
-        inactiveBtnBtn.className.add('selected')
+        allBtn.classList.remove('selected') || activeBtn.classList.remove('selected')
+        inactiveBtn.classList.add('selected')
     }
 })
+
+
 
 
 
