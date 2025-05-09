@@ -4,6 +4,8 @@ const themeSwitch = document.getElementById("theme-switch")
 const allBtn = document.getElementById('all-btn')
 const activeBtn = document.getElementById('active-btn')
 const inactiveBtn = document.getElementById('inactive-btn')
+const card = document.getElementById('card')
+const cardState = document.getElementById('toggle')
 
 /* || THEME TOGGLE */
 const enableLightMode = () => {
@@ -36,6 +38,7 @@ activeBtn.addEventListener('click', () => {
     if (activeBtn.className !== 'selected') {
         allBtn.classList.remove('selected') || inactiveBtn.classList.remove('selected')
         activeBtn.classList.add('selected')
+        displayActiveCards()
     }
 })
 
@@ -46,13 +49,17 @@ inactiveBtn.addEventListener('click', () => {
     }
 })
 
+/* || ACTIVE AND INACTIVE EXTENSIONS */
 
-
-
-
-
-
-
+const displayActiveCards = () => {
+    if (cardState.checked) {
+        activeBtn.appendChild(card)
+        document.getElementById("activeBtn").style.display = "block";
+        document.getElementById("inactiveBtn").style.display = "none";
+    } else {
+        inactiveBtn.appendChild(card)
+    }
+}
 
 
 
