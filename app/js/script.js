@@ -4,8 +4,7 @@ const themeSwitch = document.getElementById("theme-switch")
 const allBtn = document.getElementById('all-btn')
 const activeBtn = document.getElementById('active-btn')
 const inactiveBtn = document.getElementById('inactive-btn')
-const card = document.getElementById('card')
-const cardState = document.getElementById('toggle')
+
 
 /* || THEME TOGGLE */
 const enableLightMode = () => {
@@ -51,15 +50,37 @@ inactiveBtn.addEventListener('click', () => {
 
 /* || ACTIVE AND INACTIVE EXTENSIONS */
 
-const displayActiveCards = () => {
-    if (cardState.checked) {
-        activeBtn.appendChild(card)
-        document.getElementById("activeBtn").style.display = "block";
-        document.getElementById("inactiveBtn").style.display = "none";
-    } else {
-        inactiveBtn.appendChild(card)
-    }
+function toggleCardStatus(checkbox) {
+    const card = checkbox.closest('.card');
+    const id = card.dataset.id;
+    const isChecked = checkbox.checked;
+  
+    card.classList.toggle('active', isChecked);
+  
+    if (currentFilter === 'active' && !isChecked) card.classList.add('hidden');
+    else if (currentFilter === 'inactive' && isChecked) card.classList.add('hidden');
+    else card.classList.remove('hidden');
+  
+    // Save to localStorage
+    const savedStates = JSON.parse(localStorage.getItem('cardStates')) || {};
+    savedStates[id] = isChecked;
+    localStorage.setItem('cardStates', JSON.stringify(savedStates));
+  }
+
+let currentFilter = 'all';
+
+function filterCards(type) {
+    currentFilter = type;
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        const isActive = card.classList.contains('active');
+        if (type === 'all') {
+            card.classList.remove('hidden');
+        } else if (type === 'active') {
+            card.classList.toggle('hidden', !isActive);
+        } else if (type === 'inactive') {
+            card.classList.toggle('hidden', isActive);
+        }
+    });
 }
-
-
-

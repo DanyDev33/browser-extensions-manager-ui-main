@@ -24,7 +24,7 @@
 </head>
 
 <body>
-  <div class="container header__container">
+  <header class="container header__container">
     <div class="extensions__logo">
       <img src="assets/images/logo.svg" alt="logo">
     </div>
@@ -32,271 +32,272 @@
       <img src="assets/images/icon-sun.svg" alt="light-mode">
       <img src="assets/images/icon-moon.svg" alt="dark-mode">
     </button>
-  </div>
+  </header>
 
-  <div class="container extensions__list">
-    <div class="extensions__list-text">Extensions List</div>
-    <div class="extensions__buttons">
-      <button class="extensions__button selected" id="all-btn">All</button>
-      <button class="extensions__button" id="active-btn">Active</button>
-      <button class="extensions__button" id="inactive-btn">Inactive</button>
-    </div>
-  </div>
+  <main>
+    <section class="container extensions__list">
+      <div class="extensions__list-text">Extensions List</div>
+      <div class="extensions__buttons">
+        <button class="extensions__button selected" id="all-btn" onclick="filterCards('all')">All</button>
+        <button class="extensions__button" id="active-btn" onclick="filterCards('active')">Active</button>
+        <button class="extensions__button" id="inactive-btn" onclick="filterCards('inactive')">Inactive</button>
+      </div>
+    </section>
 
-  <section class="container cards">
-    <div class="card">
-      <img class="card__logo" src="assets/images/logo-devlens.svg" alt="dev-lens">
+    <section class="container cards">
+      <div class="card" data-id="card1">
+        <img class="card__logo" src="assets/images/logo-devlens.svg" alt="dev-lens">
 
-      <div class="card__typo">
-        <div class="card__title">DevLens</div>
-        <div class="card__text">Quickly inspect page layouts and visualize element boundaries.
+        <div class="card__typo">
+          <div class="card__title">DevLens</div>
+          <div class="card__text">Quickly inspect page layouts and visualize element boundaries.
+          </div>
+        </div>
+        <div class="card__remove-btn">
+          <button>Remove</button>
+        </div>
+
+        <div class="card__toggle">
+          <!-- Rounded switch -->
+          <label class="switch">
+            <input type="checkbox" onchange="toggleCardStatus(this)" id="toggle">
+            <span class="slider round"></span>
+          </label>
         </div>
       </div>
-      <div class="card__remove-btn">
-        <button>Remove</button>
-      </div>
 
-      <div class="card__toggle">
-        <!-- Rounded switch -->
-        <label class="switch">
-          <input type="checkbox" onchange="toggleCard(this)">
-          <span class="slider round"></span>
-        </label>
-      </div>
-    </div>
+      <div class="card" data-id="card2">
+        <img class="card__logo" src="assets/images/logo-style-spy.svg" alt="dev-lens">
 
-    <div class="card">
-      <img class="card__logo" src="assets/images/logo-style-spy.svg" alt="dev-lens">
+        <div class="card__typo">
+          <div class="card__title">StyleSpy</div>
+          <div class="card__text">Instantly analyze and copy CSS from any webpage element.
+          </div>
+        </div>
+        <div class="card__remove-btn">
+          <button>Remove</button>
+        </div>
 
-      <div class="card__typo">
-        <div class="card__title">StyleSpy</div>
-        <div class="card__text">Instantly analyze and copy CSS from any webpage element.
+        <div class="card__toggle">
+          <!-- Rounded switch -->
+          <label class="switch">
+            <input type="checkbox" onchange="toggleCardStatus(this)">
+            <span class="slider round"></span>
+          </label>
         </div>
       </div>
-      <div class="card__remove-btn">
-        <button>Remove</button>
-      </div>
 
-      <div class="card__toggle">
-        <!-- Rounded switch -->
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </div>
-    </div>
+      <div class="card" data-id="card3">
+        <img class="card__logo" src="assets/images/logo-speed-boost.svg" alt="dev-lens">
 
-    <div class="card">
-      <img class="card__logo" src="assets/images/logo-speed-boost.svg" alt="dev-lens">
+        <div class="card__typo">
+          <div class="card__title">SpeedBoost</div>
+          <div class="card__text">Optimizes browser resource usage to accelerate page loading.
+          </div>
+        </div>
+        <div class="card__remove-btn">
+          <button>Remove</button>
+        </div>
 
-      <div class="card__typo">
-        <div class="card__title">SpeedBoost</div>
-        <div class="card__text">Optimizes browser resource usage to accelerate page loading.
+        <div class="card__toggle">
+          <!-- Rounded switch -->
+          <label class="switch">
+            <input type="checkbox" onchange="toggleCardStatus(this)">
+            <span class="slider round"></span>
+          </label>
         </div>
       </div>
-      <div class="card__remove-btn">
-        <button>Remove</button>
-      </div>
 
-      <div class="card__toggle">
-        <!-- Rounded switch -->
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </div>
-    </div>
+      <div class="card" data-id="card4">
+        <img class="card__logo" src="assets/images/logo-json-wizard.svg" alt="dev-lens">
 
-    <div class="card">
-      <img class="card__logo" src="assets/images/logo-json-wizard.svg" alt="dev-lens">
+        <div class="card__typo">
+          <div class="card__title">JSONWizard</div>
+          <div class="card__text">Formats, validates, and prettifies JSON responses in-browser.
+          </div>
+        </div>
+        <div class="card__remove-btn">
+          <button>Remove</button>
+        </div>
 
-      <div class="card__typo">
-        <div class="card__title">JSONWizard</div>
-        <div class="card__text">Formats, validates, and prettifies JSON responses in-browser.
+        <div class="card__toggle">
+          <!-- Rounded switch -->
+          <label class="switch">
+            <input type="checkbox" onchange="toggleCardStatus(this)">
+            <span class="slider round"></span>
+          </label>
         </div>
       </div>
-      <div class="card__remove-btn">
-        <button>Remove</button>
-      </div>
 
-      <div class="card__toggle">
-        <!-- Rounded switch -->
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </div>
-    </div>
+      <div class="card" data-id="card5">
+        <img class="card__logo" src="assets/images/logo-tab-master-pro.svg" alt="dev-lens">
 
-    <div class="card">
-      <img class="card__logo" src="assets/images/logo-tab-master-pro.svg" alt="dev-lens">
+        <div class="card__typo">
+          <div class="card__title">TabMaster Pro</div>
+          <div class="card__text">Organizes browser tabs into groups and sessions.
+          </div>
+        </div>
+        <div class="card__remove-btn">
+          <button>Remove</button>
+        </div>
 
-      <div class="card__typo">
-        <div class="card__title">TabMaster Pro</div>
-        <div class="card__text">Organizes browser tabs into groups and sessions.
+        <div class="card__toggle">
+          <!-- Rounded switch -->
+          <label class="switch">
+            <input type="checkbox" onchange="toggleCardStatus(this)">
+            <span class="slider round"></span>
+          </label>
         </div>
       </div>
-      <div class="card__remove-btn">
-        <button>Remove</button>
-      </div>
 
-      <div class="card__toggle">
-        <!-- Rounded switch -->
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </div>
-    </div>
+      <div class="card" data-id="card6">
+        <img class="card__logo" src="assets/images/logo-viewport-buddy.svg" alt="dev-lens">
 
-    <div class="card">
-      <img class="card__logo" src="assets/images/logo-viewport-buddy.svg" alt="dev-lens">
+        <div class="card__typo">
+          <div class="card__title">ViewportBuddy</div>
+          <div class="card__text">Simulates various screen resolutions directly within the browser.
+          </div>
+        </div>
+        <div class="card__remove-btn">
+          <button>Remove</button>
+        </div>
 
-      <div class="card__typo">
-        <div class="card__title">ViewportBuddy</div>
-        <div class="card__text">Simulates various screen resolutions directly within the browser.
+        <div class="card__toggle">
+          <!-- Rounded switch -->
+          <label class="switch">
+            <input type="checkbox" onchange="toggleCardStatus(this)">
+            <span class="slider round"></span>
+          </label>
         </div>
       </div>
-      <div class="card__remove-btn">
-        <button>Remove</button>
-      </div>
 
-      <div class="card__toggle">
-        <!-- Rounded switch -->
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </div>
-    </div>
+      <div class="card" data-id="card7">
+        <img class="card__logo" src="assets/images/logo-markup-notes.svg" alt="dev-lens">
 
-    <div class="card">
-      <img class="card__logo" src="assets/images/logo-markup-notes.svg" alt="dev-lens">
+        <div class="card__typo">
+          <div class="card__title">Markup Notes</div>
+          <div class="card__text">Enables annotation and notes directly onto webpages for collaborative debugging.
+          </div>
+        </div>
+        <div class="card__remove-btn">
+          <button>Remove</button>
+        </div>
 
-      <div class="card__typo">
-        <div class="card__title">Markup Notes</div>
-        <div class="card__text">Enables annotation and notes directly onto webpages for collaborative debugging.
+        <div class="card__toggle">
+          <!-- Rounded switch -->
+          <label class="switch">
+            <input type="checkbox" onchange="toggleCardStatus(this)">
+            <span class="slider round"></span>
+          </label>
         </div>
       </div>
-      <div class="card__remove-btn">
-        <button>Remove</button>
-      </div>
 
-      <div class="card__toggle">
-        <!-- Rounded switch -->
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </div>
-    </div>
+      <div class="card" data-id="card8">
+        <img class="card__logo" src="assets/images/logo-grid-guides.svg" alt="dev-lens">
 
-    <div class="card">
-      <img class="card__logo" src="assets/images/logo-grid-guides.svg" alt="dev-lens">
+        <div class="card__typo">
+          <div class="card__title">GridGuides</div>
+          <div class="card__text">Overlay customizable grids and alignment guides on any webpage.
+          </div>
+        </div>
+        <div class="card__remove-btn">
+          <button>Remove</button>
+        </div>
 
-      <div class="card__typo">
-        <div class="card__title">GridGuides</div>
-        <div class="card__text">Overlay customizable grids and alignment guides on any webpage.
+        <div class="card__toggle">
+          <!-- Rounded switch -->
+          <label class="switch">
+            <input type="checkbox" onchange="toggleCardStatus(this)">
+            <span class="slider round"></span>
+          </label>
         </div>
       </div>
-      <div class="card__remove-btn">
-        <button>Remove</button>
-      </div>
 
-      <div class="card__toggle">
-        <!-- Rounded switch -->
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </div>
-    </div>
+      <div class="card" data-id="card9">
+        <img class="card__logo" src="assets/images/logo-palette-picker.svg" alt="dev-lens">
 
-    <div class="card">
-      <img class="card__logo" src="assets/images/logo-palette-picker.svg" alt="dev-lens">
+        <div class="card__typo">
+          <div class="card__title">Palette Picker</div>
+          <div class="card__text">Instantly extracts color palettes from any webpage.
+          </div>
+        </div>
+        <div class="card__remove-btn">
+          <button>Remove</button>
+        </div>
 
-      <div class="card__typo">
-        <div class="card__title">Palette Picker</div>
-        <div class="card__text">Instantly extracts color palettes from any webpage.
+        <div class="card__toggle">
+          <!-- Rounded switch -->
+          <label class="switch">
+            <input type="checkbox" onchange="toggleCardStatus(this)">
+            <span class="slider round"></span>
+          </label>
         </div>
       </div>
-      <div class="card__remove-btn">
-        <button>Remove</button>
-      </div>
 
-      <div class="card__toggle">
-        <!-- Rounded switch -->
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </div>
-    </div>
+      <div class="card" data-id="card10">
+        <img class="card__logo" src="assets/images/logo-link-checker.svg" alt="dev-lens">
 
-    <div class="card">
-      <img class="card__logo" src="assets/images/logo-link-checker.svg" alt="dev-lens">
+        <div class="card__typo">
+          <div class="card__title">LinkChecker</div>
+          <div class="card__text">Scans and highlights broken links on any page.
+          </div>
+        </div>
+        <div class="card__remove-btn">
+          <button>Remove</button>
+        </div>
 
-      <div class="card__typo">
-        <div class="card__title">LinkChecker</div>
-        <div class="card__text">Scans and highlights broken links on any page.
+        <div class="card__toggle">
+          <!-- Rounded switch -->
+          <label class="switch">
+            <input type="checkbox" onchange="toggleCardStatus(this)">
+            <span class="slider round"></span>
+          </label>
         </div>
       </div>
-      <div class="card__remove-btn">
-        <button>Remove</button>
-      </div>
 
-      <div class="card__toggle">
-        <!-- Rounded switch -->
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </div>
-    </div>
+      <div class="card" data-id="card11">
+        <img class="card__logo" src="assets/images/logo-dom-snapshot.svg" alt="dev-lens">
 
-    <div class="card">
-      <img class="card__logo" src="assets/images/logo-dom-snapshot.svg" alt="dev-lens">
+        <div class="card__typo">
+          <div class="card__title">DOM Snapshot</div>
+          <div class="card__text">Capture and export DOM structures quickly.
+          </div>
+        </div>
+        <div class="card__remove-btn">
+          <button>Remove</button>
+        </div>
 
-      <div class="card__typo">
-        <div class="card__title">DOM Snapshot</div>
-        <div class="card__text">Capture and export DOM structures quickly.
+        <div class="card__toggle">
+          <!-- Rounded switch -->
+          <label class="switch">
+            <input type="checkbox" onchange="toggleCardStatus(this)">
+            <span class="slider round"></span>
+          </label>
         </div>
       </div>
-      <div class="card__remove-btn">
-        <button>Remove</button>
-      </div>
 
-      <div class="card__toggle">
-        <!-- Rounded switch -->
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </div>
-    </div>
+      <div class="card" data-id="card12">
+        <img class="card__logo" src="assets/images/logo-console-plus.svg" alt="dev-lens">
 
-    <div class="card">
-      <img class="card__logo" src="assets/images/logo-console-plus.svg" alt="dev-lens">
+        <div class="card__typo">
+          <div class="card__title">ConsolePlus</div>
+          <div class="card__text">Enhanced developer console with advanced filtering and logging.
+          </div>
+        </div>
+        <div class="card__remove-btn">
+          <button>Remove</button>
+        </div>
 
-      <div class="card__typo">
-        <div class="card__title">ConsolePlus</div>
-        <div class="card__text">Enhanced developer console with advanced filtering and logging.
+        <div class="card__toggle">
+          <!-- Rounded switch -->
+          <label class="switch">
+            <input type="checkbox" onchange="toggleCardStatus(this)">
+            <span class="slider round"></span>
+          </label>
         </div>
       </div>
-      <div class="card__remove-btn">
-        <button>Remove</button>
-      </div>
-
-      <div class="card__toggle">
-        <!-- Rounded switch -->
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </div>
-    </div>
-  </section>
-
+    </section>
+  </main>
 
 
   <!-- If you plan to use the JSON file to populate the data dynamically, you can delete the content below -->
@@ -306,6 +307,11 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
+  <script>
+    window.onload = function () {
+      restoreCardStates();
+    };
+  </script>
 </body>
 <script src="app/js/script.js"></script>
 

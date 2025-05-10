@@ -402,3 +402,10 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute; /* removes from flow without breaking layout */
+  }
