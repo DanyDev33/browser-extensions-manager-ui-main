@@ -4,6 +4,7 @@ const themeSwitch = document.getElementById("theme-switch")
 const allBtn = document.getElementById('all-btn')
 const activeBtn = document.getElementById('active-btn')
 const inactiveBtn = document.getElementById('inactive-btn')
+const remove = document.querySelectorAll('.card__remove-btn')
 
 
 /* || THEME TOGGLE */
@@ -50,26 +51,25 @@ inactiveBtn.addEventListener('click', () => {
 
 /* || ACTIVE AND INACTIVE EXTENSIONS */
 
-function toggleCardStatus(checkbox) {
+const toggleCardStatus = (checkbox) => {
     const card = checkbox.closest('.card');
-    const id = card.dataset.id;
-    const isChecked = checkbox.checked;
-  
-    card.classList.toggle('active', isChecked);
-  
-    if (currentFilter === 'active' && !isChecked) card.classList.add('hidden');
-    else if (currentFilter === 'inactive' && isChecked) card.classList.add('hidden');
-    else card.classList.remove('hidden');
-  
-    // Save to localStorage
-    const savedStates = JSON.parse(localStorage.getItem('cardStates')) || {};
-    savedStates[id] = isChecked;
-    localStorage.setItem('cardStates', JSON.stringify(savedStates));
-  }
+    const isActiveView = currentFilter === 'active';
+    const isInactiveView = currentFilter === 'inactive';
+
+    if (checkbox.checked) {
+        card.classList.add('active');
+        if (isInactiveView) card.classList.add('hidden');
+        else card.classList.remove('hidden');
+    } else {
+        card.classList.remove('active');
+        if (isActiveView) card.classList.add('hidden');
+        else card.classList.remove('hidden');
+    }
+}
 
 let currentFilter = 'all';
 
-function filterCards(type) {
+const filterCards = (type) => {
     currentFilter = type;
     const cards = document.querySelectorAll('.card');
 
@@ -84,3 +84,18 @@ function filterCards(type) {
         }
     });
 }
+
+/* || REMOVE BUTTON */
+
+
+
+remove.addEventListener('click', () => {
+    const cards = document.querySelectorAll('.cards')
+    cards.forEach(card => {
+        const result = confirm('Want to Delete?')
+        if (result) {
+            card.remove()
+        }
+
+    })
+})
