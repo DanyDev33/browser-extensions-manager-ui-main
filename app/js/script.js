@@ -4,7 +4,7 @@ const themeSwitch = document.getElementById("theme-switch")
 const allBtn = document.getElementById('all-btn')
 const activeBtn = document.getElementById('active-btn')
 const inactiveBtn = document.getElementById('inactive-btn')
-const remove = document.querySelectorAll('.card__remove-btn')
+const remove = document.getElementById('remove')
 
 
 /* || THEME TOGGLE */
@@ -87,15 +87,7 @@ const filterCards = (type) => {
 
 /* || REMOVE BUTTON */
 
-
-
 remove.addEventListener('click', () => {
-    const cards = document.querySelectorAll('.cards')
-    cards.forEach(card => {
-        const result = confirm('Want to Delete?')
-        if (result) {
-            card.remove()
-        }
-
-    })
+    const card = document.getElementById('cards')
+    card.parentElement.removeChild(card)
 })
