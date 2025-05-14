@@ -87,8 +87,6 @@ const filterCards = (type) => {
 
 /* || REMOVE BUTTON */
 
-
-
 removeButtons.forEach(button => {
     button.addEventListener('click', () => {
         const card = button.parentElement
